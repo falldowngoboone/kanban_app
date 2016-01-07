@@ -1,7 +1,7 @@
-var path = require('path');
-var HtmlwebpackPlugin = require('html-webpack-plugin');
-var merge = require('webpack-merge');
-var webpack = require('webpack');
+const path = require('path');
+const HtmlwebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const webpack = require('webpack');
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -34,7 +34,7 @@ const common = {
       // Set up jsx. This accepts js too thanks to RegExp (x?)
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
+        loaders: ['babel?cacheDirectory'],
         include: PATHS.app
       }
     ]
